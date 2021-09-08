@@ -8,3 +8,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GlowDayzApp"
 include ':app'
+include ':data-remote'
+include ':domain'
