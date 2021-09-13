@@ -17,6 +17,8 @@
 과제에서 주어진 요구사항을 통해 API통신을 비동기로 처리하여야 함을 알았습니다.
 확인한 사항을 처리하기 위해 coroutine의 async를 사용하였으며,
 추후에 로컬DB를 사용할 수 있을 것이라 생각하여 RepositoryPattern을 이용하여 서버에서 데이터를 가져오고 있지만 추후에 Repository의 변경 및 추가만으로 로컬DB를 관리 할 수 있습니다.
+또한 중첩된 recyclerview를 구현 하기위해 Product아이템의 특정 position으로 구분하였습니다.
+
 
 ***
 ## AAC Clean,MVVM:
