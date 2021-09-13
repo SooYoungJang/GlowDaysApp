@@ -22,6 +22,7 @@ ext {
     navigationVersion = '2.3.5'
     hiltVersion = '2.38.1'
     lifecycleVersion = "2.4.0-alpha02"
+    pagingVersion = "3.0.0"
 
     // Data
     retrofitVersion = '2.9.0'
@@ -51,7 +52,8 @@ ext {
             viewmodel             : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion",
             livedata              : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion",
             lifeCycleCompiler     : "androidx.lifecycle:lifecycle-compiler:$lifecycleVersion",
-            supportV4     : "androidx.legacy:legacy-support-v4:$supportV4Version",
+            supportV4             : "androidx.legacy:legacy-support-v4:$supportV4Version",
+            paging                : "androidx.paging:paging-runtime-ktx:$pagingVersion"
     ]
 
     dataDependencies = [

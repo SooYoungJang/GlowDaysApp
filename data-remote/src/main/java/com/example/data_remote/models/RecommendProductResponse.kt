@@ -1,17 +1,20 @@
 package com.example.data_remote.models
 
-
 import com.google.gson.annotations.SerializedName
 
 data class RecommendProductResponse(
+    @SerializedName("idProduct")
+    var idProduct: Int = 0,
 
-    @SerializedName("recommend1")
-    var recommend1: List<RecommendResponse>,
+    @SerializedName("productTitle")
+    var productTitle: String = "",
 
-    @SerializedName("recommend2")
-    var recommend2: List<RecommendResponse>,
+    @SerializedName("ratingAvg")
+    var ratingAvg: Double = 0.0,
 
-    @SerializedName("recommend3")
-    var recommend3: List<RecommendResponse>
+    @SerializedName("reviewCount")
+    var reviewCount: String = "",
 
-    )
+    @SerializedName("imageUrl")
+    var imageUrl: String = "",
+)

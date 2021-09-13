@@ -13,8 +13,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.glowdayzapp"
-        minSdkVersion minSdk
-        targetSdkVersion targetSdk
+        minSdkVersion 21
+        targetSdkVersion 30
         versionCode versionCodeMajor
         versionName versionName
 
@@ -46,9 +46,6 @@ dependencies {
     implementation project(':domain')
     implementation project(':data-remote')
 
-
-
-
     // ViewModelhilt_version
     implementation appDependencies.viewmodel
     // LiveData
@@ -68,7 +65,9 @@ dependencies {
     implementation appDependencies.glide
     kapt appDependencies.glideCompiler
 
-
+    //paging
+    implementation appDependencies.paging
+    
     implementation appDependencies.supportV4
     implementation appDependencies.androidxKtx
     implementation appDependencies.appCompat

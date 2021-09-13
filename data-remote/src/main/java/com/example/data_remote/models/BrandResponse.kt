@@ -3,7 +3,7 @@ package com.example.data_remote.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Brand(
+data class BrandResponse(
     @SerializedName("brandTitle")
     val brandTitle: String,
     @SerializedName("idBrand")
