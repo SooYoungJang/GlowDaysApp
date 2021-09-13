@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/second_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnknownId">
+
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="@+id/firstLayout"
+                app:layout_constraintLeft_toLeftOf="@+id/firstLayout"
+                app:layout_constraintRight_toRightOf="@+id/firstLayout"
+                app:layout_constraintTop_toTopOf="@+id/firstLayout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondLayout"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/firstLayout"
+            app:layout_constraintRight_toLeftOf="@+id/third_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnknownId">
+
+            <TextView
+                android:id="@+id/productNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/secondLayout"
+                app:layout_constraintTop_toTopOf="@+id/secondLayout"
+                app:layout_constraintRight_toRightOf="@+id/secondLayout"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/thirdLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/secondLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/secondLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/brandTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/thirdLayout"
+                app:layout_constraintTop_toTopOf="@+id/thirdLayout" />
+
+
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="@+id/thirdLayout"
+                app:layout_constraintTop_toBottomOf="@+id/brandTitle" />
+
+            <TextView
+                android:id="@+id/ratingAvg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/star_item"
+                app:layout_constraintLeft_toLeftOf="@+id/thirdLayout"
+                app:layout_constraintTop_toBottomOf="@+id/productTitle" />
+
+            <TextView
+                android:id="@+id/reviewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/ratingAvg"
+                app:layout_constraintTop_toBottomOf="@+id/productTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
