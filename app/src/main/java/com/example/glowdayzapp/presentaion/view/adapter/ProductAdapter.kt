@@ -63,6 +63,7 @@ class ProductAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        Log.d("sdff" , "dasd 2222 $position")
         val productItems = differ.currentList[position]
         if (holder is ProductViewHolder)
             holder.bind(productItems)

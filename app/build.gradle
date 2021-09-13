@@ -65,9 +65,7 @@ dependencies {
     implementation appDependencies.glide
     kapt appDependencies.glideCompiler
 
-    //paging
-    implementation appDependencies.paging
-    
+
     implementation appDependencies.supportV4
     implementation appDependencies.androidxKtx
     implementation appDependencies.appCompat

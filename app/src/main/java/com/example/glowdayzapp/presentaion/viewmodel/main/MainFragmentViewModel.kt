@@ -1,5 +1,6 @@
 package com.example.glowdayzapp.presentaion.viewmodel.main
 
+import android.os.Parcelable
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -12,17 +13,17 @@ import com.example.domain.models.RecommendProductList
 import com.example.domain.repository.GlowDaysRepository
 import com.example.domain.usecase.GetProductListUseCase
 import com.example.domain.usecase.GetRecommendProductList
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainFragmentViewModel  : ViewModel(){
-    private val productRepository: GlowDaysRepository
+@HiltViewModel
+class MainFragmentViewModel  @Inject constructor (private val getProductListUseCase: GetProductListUseCase, private val getRecommendProductList: GetRecommendProductList)  : ViewModel(){
+
     private var pageNumber: Int = 1
-
-    init {
-        productRepository = GlowDaysRepositoryImpl()
-    }
+    var state: Parcelable? = null
 
     private val productAllList = mutableListOf<ProductAllList>()
     private val _ProductAllLiveData = MutableLiveData<List<ProductAllList>>()
@@ -33,8 +34,8 @@ class MainFragmentViewModel  : ViewModel(){
 
 
     fun getProductList() =viewModelScope.launch {
-        val productResponse = async { GetProductListUseCase(productRepository).execute(pageNumber) }
-        val recommendResponse = async { GetRecommendProductList(productRepository).execute() }
+        val productResponse = async { getProductListUseCase.execute(pageNumber) }
+        val recommendResponse = async { getRecommendProductList.execute() }
         computeResult(productResponse.await(), recommendResponse.await())
     }
 
@@ -78,8 +79,8 @@ class MainFragmentViewModel  : ViewModel(){
         pageNumber++
         if(pageNumber <= 3) {
             viewModelScope.launch {
-                val productResponse = async { GetProductListUseCase(productRepository).execute(pageNumber) }
-                val recommendResponse = async { GetRecommendProductList(productRepository).execute() }
+                val productResponse = async { getProductListUseCase.execute(pageNumber) }
+                val recommendResponse = async { getRecommendProductList.execute() }
                 computeResult(productResponse.await(), recommendResponse.await())
             }
         }

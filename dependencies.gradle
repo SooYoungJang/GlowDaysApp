@@ -19,7 +19,7 @@ ext {
     supportV4Version = '1.0.0'
     materialVersion = '1.4.0'
     glideVersion = '4.12.0'
-    navigationVersion = '2.3.5'
+    navigationVersion = '2.4.0-alpha04'
     hiltVersion = '2.38.1'
     lifecycleVersion = "2.4.0-alpha02"
     pagingVersion = "3.0.0"

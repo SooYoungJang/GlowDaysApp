@@ -28,11 +28,13 @@ class RecommendAdapter(private val recommendItemClickListener: (product: Recomme
     val differ = AsyncListDiffer(this,callback)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+
         val binding = RecommandListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RecommandItemViewHolder(binding,recommendItemClickListener)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        Log.d("sdff" , "dasd 1111 $position")
         val recommendItem = differ.currentList[position]
         if (holder is RecommandItemViewHolder)
             holder.bind(recommendItem)
