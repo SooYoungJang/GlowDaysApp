@@ -19,6 +19,8 @@
 추후에 로컬DB를 사용할 수 있을 것이라 생각하여 RepositoryPattern을 이용하여 서버에서 데이터를 가져오고 있지만 추후에 Repository의 변경 및 추가만으로 로컬DB를 관리 할 수 있습니다.
 또한 중첩된 recyclerview를 구현 하기위해 Product아이템의 특정 position으로 구분하였습니다.
 
+***
+
 ## 요구사항 :
 1.Infinity Scroll
 아이템의 20번째마다 페이징 기능을 구현해야 했습니다. 페이징 방법으로 jet-pack의 paging 과 리싸이클러뷰의 OnScrollListener를 사용한 구현을 생각하였으며,
